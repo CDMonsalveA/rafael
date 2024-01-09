@@ -1,0 +1,50 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafael</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript%}
+    {% bootstrap_messages %}
+</head>
+<body>
+   
+    <!-- Nav con logo, secciones, [Inicio, Servicios, Nuestro Equipo, Blog, Contacto] -->
+    <!-- nav made in Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="{% static 'img/logo.png' %}" alt="Logo" width="50" height="50">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">{{ _("Inicio") }}</a>
+              <a class="nav-link" href="{% url 'services' %}">{{ _("Servicios") }}</a>
+              <a class="nav-link" href="{% url 'team' %}">{{ _("Nuestro Equipo") }}</a>
+              <a class="nav-link" href="{% url 'blog' %}">{{ _("Blog") }}</a>
+              <a class="nav-link" href="{% url 'contact' %}">{{ _("Contacto") }}</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <!-- Fin Nav -->
+
+    <!-- Portada -->
+        <!-- Parrafo, botón "Leer Más", Botón "Chatea", Foto de stock -->
+    <!-- Sobre Nosotros -->
+        <!-- Foto, parrafo, galería de servicios -->
+    <!-- Testimonios -->
+        <!-- Foto, nombre, estrellas, parrafo -->
+    <!-- Empresas -->
+        <!-- Espacio para que las empresas soliciten servicios -->
+    <!-- footer = Contacto -->
+</body>
+</html>
