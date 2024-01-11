@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
 
 from home.models import Post, Comment
 
@@ -25,7 +23,7 @@ def blog_index(request):
     context = {
         "posts":posts,
     }
-    return render(request, "home/blog_index.html", context)
+    return render(request, "blog/blog_index.html", context)
 
 def blog_category(request, category):
     posts = Post.objects.filter(
@@ -35,7 +33,7 @@ def blog_category(request, category):
         "category": category,
         "posts": posts,
     }
-    return render(request, "home/category.html", context)
+    return render(request, "blog/category.html", context)
 
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
@@ -45,4 +43,4 @@ def blog_detail(request, pk):
         "comments": comments,
     }
 
-    return render(request, "home/blog_detail.html", context)
+    return render(request, "blog/blog_detail.html", context)

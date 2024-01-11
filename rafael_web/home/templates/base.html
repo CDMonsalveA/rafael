@@ -1,52 +1,33 @@
 {% load static %}
-{% load i18n %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rafael</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/dist/css/bootstrap.min.css' %}">
-    <!-- Bootstrap JS -->
+    <link rel="stylesheet" href="{% static 'css/dist/styles.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src="{% static 'css/dist/js/bootstrap.bundle.min.js' %}"></script>
     
 </head>
 <body>
-   
-    <!-- Nav con logo, secciones, [Inicio, Servicios, Nuestro Equipo, Blog, Contacto] -->
-    <!-- nav made in Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-              <img src="{% static 'img/logo.png' %}" alt="Logo" width="50" height="50">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button> 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">{{ _("Inicio") }}</a>
-              <a class="nav-link" href="{% url 'services' %}">{{ _("Servicios") }}</a>
-              <a class="nav-link" href="{% url 'team' %}">{{ _("Nuestro Equipo") }}</a>
-              <a class="nav-link" href="{% url 'blog_index' %}">{{ _("Blog") }}</a>
-              <a class="nav-link" href="{% url 'contact' %}">{{ _("Contacto") }}</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    <!-- Fin Nav -->
-
-    <!-- Portada -->
-        <!-- Parrafo, botón "Leer Más", Botón "Chatea", Foto de stock -->
-    <!-- Sobre Nosotros -->
-        <!-- Foto, parrafo, galería de servicios -->
-    <!-- Testimonios -->
-        <!-- Foto, nombre, estrellas, parrafo -->
-    <!-- Empresas -->
-        <!-- Espacio para que las empresas soliciten servicios -->
-    <!-- footer = Contacto -->
+    <!-- * Navbar -->
+    {% include 'home/nav.html' %}
+    <!-- * Content -->
+    {% if request.path == '/' or request.path == '/home/' %}
+        {% include 'home/homepage.html' %}
+    {% elif request.path == '/services/' %}
+        {% include 'home/servicespage.html' %}
+    {% elif request.path == '/team/' %}
+        {% include 'home/teampage.html' %}
+    {% elif request.path == '/blog/' %}
+        {% include 'home/blogpage.html' %}
+    {% elif request.path == '/contact/' %}
+        {% include 'home/contactpage.html' %}
+    {% endif %}
 </body>
+
+<footer class="bg-primary p-0 m-0 container">
+  <h3>Footer</h3>
+</footer>
 </html>
