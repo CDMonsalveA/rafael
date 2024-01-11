@@ -7,6 +7,12 @@ $success:       #6ACFC9;
 $light:         #FAEDDA;
 $dark:          #000000;
 
+// Typography dancing script and nunito
+// previous: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif: 'Nunito', sans-serif;
+
+
+
 @import "../scss/bootstrap.scss";
 
 // scss-docs-start custom-variables
