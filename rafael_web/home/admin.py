@@ -4,10 +4,16 @@ from home.models import Category, Comment, Post
 
 # Models from the navbar app
 from home.models import NavBar, NavBarToggle
+# Models from the testimonials section
+from home.models import Testimonial
 
 # Register your models here.
 admin.site.register(NavBar)
 admin.site.register(NavBarToggle)
+
+# Models from the testimonials section
+admin.site.register(Testimonial)
+
 class CategoryAdmin(admin.ModelAdmin):
     pass
 
