@@ -12,14 +12,16 @@
     <div class="navbar-nav container justify-content-center">
     {% for item in navbar %}
       <a class="nav-link mx-4
-      {% if item.link in request.path %}
+      {% if item.link in request.path or request.path == '/' and item.link == 'home' %}
       active
       {% endif %}"
-      aria-current="page" href="
+      aria-current="page" 
+      href="
       {% if item.link == 'home' %}
-      {% url '' %}
+      /     
       {% else %}
       {% url item.link %}
+      {% endif %}
       ">{{ item.name }}</a>
     {% endfor %}
         
