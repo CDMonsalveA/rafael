@@ -1,0 +1,22 @@
+{% load static %}
+{% block content %}
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="font-family-serif display-2" style="font-family: 'dancing script';">Centro terapeutico en linea</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quisquam, voluptatum.
+                    Eaque maiores dicta tenetur labore in. Doloremque, pariatur 
+                    expedita adipisci debitis consequuntur cumque quibusdam nesciunt,
+                    ducimus facere quo placeat. Impedit, reiciendis expedita.
+                </p>
+                <a href="#about_section" class="btn btn-primary btn-lg m-1">Leer más</a>
+                <a href="https://wa.me/573115597691" class="btn btn-outline-primary btn-lg m-1">Habla con un experto</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/logo.svg' %}" alt="Web developer" class="img-fluid">
+            </div>
+        </div>
+    </div>
+{% endblock content %}
