@@ -2,6 +2,30 @@ from django.db import models
 
 # Create your models here.
 
+#### Navigation Bar buttons ####
+class NavBar(models.Model):
+    name = models.CharField(max_length=15)
+    link = models.CharField(max_length=10)
+    order = models.IntegerField()
+    class Meta:
+        verbose_name_plural = "navbars"
+
+    def __str__(self):
+        return self.name
+#### Navigation Bar toggles for buttons for Navbar ####
+class NavBarToggle(models.Model):
+    name = models.CharField(max_length=15)
+    link = models.CharField(max_length=10)
+    order = models.IntegerField()
+    navbar = models.ForeignKey("NavBar",on_delete=models.CASCADE)
+    class Meta:
+        verbose_name_plural = "navbartoggles"
+
+    def __str__(self):
+        return self.name
+    
+    
+
 
 class Category(models.Model):
     name = models.CharField(max_length=30)

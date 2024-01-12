@@ -2,6 +2,12 @@ from django.contrib import admin
 
 from home.models import Category, Comment, Post
 
+# Models from the navbar app
+from home.models import NavBar, NavBarToggle
+
+# Register your models here.
+admin.site.register(NavBar)
+admin.site.register(NavBarToggle)
 class CategoryAdmin(admin.ModelAdmin):
     pass
 
