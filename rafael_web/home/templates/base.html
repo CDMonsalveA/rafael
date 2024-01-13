@@ -5,6 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rafael</title>
+  <!-- * Bootstrap -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap/dist/css/bootstrap.min.css' %}">
+  <script src="{% static 'css/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+  <!-- * Fontawesome -->
+  <script src="https://kit.fontawesome.com/8777a6e93d.js" crossorigin="anonymous"></script>
+  <!-- * Custom CSS -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <!-- * Custom JS -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <!-- * Favicon -->
+  <link rel="rafael-icon" sizes="180x180" href="{% static 'img/favicon/logo.svg' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon/logo.svg' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon/logo.svg' %}">
+  <link rel="mask-icon" href="{% static 'img/favicon/logo.svg' %}" color="#5bbad5">
+  <link rel="shortcut icon" href="{% static 'img/favicon/logo.svg' %}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="{% static 'img/favicon/browserconfig.xml' %}">
+  <meta name="theme-color" content="#ffffff">
 </head>
 <body>
   <!-- * Navbar -->
@@ -17,14 +35,14 @@
   {% elif request.path == '/team/' %}
   {% include 'home/teampage.html' %}
   {% elif request.path == '/blog/' %}
-  {% include 'home/blogpage.html' %}
+  {% include 'blog/blog_index.html' %}
   {% elif request.path == '/contact/' %}
   {% include 'home/contactpage.html' %}
   {% endif %}
 </body>
 
-<footer class="bg-primary">
+<footer class="container-fluid">
   <!-- Footer, with social media links -->
-  <p>Footer</p>
+  {% include 'home/footer.html' %}
 </footer>
 </html>
