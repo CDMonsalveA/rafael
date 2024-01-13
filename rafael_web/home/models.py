@@ -24,6 +24,19 @@ class NavBarToggle(models.Model):
     def __str__(self):
         return self.name
     
+#### Testimonials ####
+class Testimonial(models.Model):
+    name = models.CharField(max_length=30)
+    title = models.CharField(max_length=30)
+    body = models.TextField()
+    image = models.ImageField(upload_to="images/")
+    order = models.IntegerField()
+    class Meta:
+        verbose_name_plural = "testimonials"
+    def __str__(self):
+        return self.name
+        
+    
     
 
 
