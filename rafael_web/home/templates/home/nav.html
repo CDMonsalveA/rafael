@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
   <div class="container-fluid justify-content-center">
     <a class="navbar-brand " href="/">
       <img src="{% static 'img/logo.svg' %}" alt="Logo" width="200">
@@ -16,7 +16,7 @@
     <a class="nav-link align-middle text-center mx-3 {% if item.link in request.path or request.path == '/' and item.link == 'home' %}active{% endif %}"
     aria-current="page" 
     href="{% if item.link == 'home' %}/{% else %}{% url item.link %}{% endif %}">{{ item.name }}</a>
-    {% endfor %}          
+    {% endfor %} 
     </div>
   </div>
 </nav>
