@@ -10,8 +10,8 @@
   <script src="{% static 'css/bootstrap/dist/js/bootstrap.min.js' %}"></script>
   <!-- * Fontawesome -->
   <script src="https://kit.fontawesome.com/8777a6e93d.js" crossorigin="anonymous"></script>
-  <!-- * Custom CSS -->
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- * Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   <!-- * Custom JS -->
   <script src="{% static 'js/main.js' %}"></script>
   <!-- * Favicon -->
@@ -23,6 +23,10 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="{% static 'img/favicon/browserconfig.xml' %}">
   <meta name="theme-color" content="#ffffff">
+  <!-- * JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- * Font - Nunito and Dancing Script -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- * Navbar -->
@@ -40,9 +44,7 @@
   {% include 'home/contactpage.html' %}
   {% endif %}
 </body>
-
-<footer class="container-fluid">
-  <!-- Footer, with social media links -->
-  {% include 'home/footer.html' %}
+<!-- Footer, with social media links -->
+{% include 'home/footer.html' %}
 </footer>
 </html>
