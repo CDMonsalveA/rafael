@@ -29,9 +29,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- * Navbar -->
   {% include 'home/nav.html' %}
-  <!-- * Content -->
+  
   {% if request.path == '/' or request.path == '/home/' %}
   {% include 'home/homepage.html' %}
   {% elif request.path == '/services/' %}
@@ -44,7 +43,6 @@
   {% include 'home/contactpage.html' %}
   {% endif %}
 </body>
-<!-- Footer, with social media links -->
 {% include 'home/footer.html' %}
 </footer>
 </html>
