@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rafael</title>
+  <title>{{post.title}}</title>
   <!-- * Bootstrap -->
   <link rel="stylesheet" href="{% static 'css/bootstrap/dist/css/bootstrap.min.css' %}">
   <script src="{% static 'css/bootstrap/dist/js/bootstrap.min.js' %}"></script>
@@ -31,7 +31,8 @@
 {% block page_title %}
     <div class="container py-5">
         <div class="d-flex justify-content-center">
-        <h1 class="font-family-serif display-2" style="font-family: 'dancing script';">{{ post.title }}</h1>
+            <img src="{{ post.image.url }}" alt="{{post.title}}" class="img-fluid position-relative" >
+        <h1 class="display-2 cursive position-absolute fw-bold " >{{ post.title }}</h1>
     </div>
     </div>
 {% endblock page_title %}
@@ -46,8 +47,10 @@
             </a>
         {% endfor %}
     </small>
-    <p>{{ post.body | linebreaks }}</p>
+    <p>{{ post.body | safe }}</p>
 </div>
+
+
 
 
 <div class="container ">
@@ -62,8 +65,9 @@
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
-
+   
     <h3>Comentarios:</h3>
+   
     {% for comment in comments %}
         <p>
             Por {{ comment.created_on.date }} <b>{{ comment.author }}</b>:

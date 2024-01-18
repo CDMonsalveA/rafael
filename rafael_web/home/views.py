@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from home.models import Post, Comment
 from home.forms import CommentForm
+from .forms import PostForm
 
 # Nav models
 from home.models import NavBar, NavBarToggle
@@ -55,5 +56,8 @@ def blog_detail(request, pk):
         "comments": comments,
         "form": CommentForm(),
     }
+  
+
 
     return render(request, "blog/blog_detail.html", context)
+
