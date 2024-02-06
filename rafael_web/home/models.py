@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 #### Navigation Bar buttons ####
@@ -52,9 +52,10 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-#     image = models.ImageField(upload_to=)
-    title =  models.CharField(max_length=255)
-    body = models.TextField()
+
+    title =  models.CharField(max_length=300)
+    image = models.ImageField(upload_to='images/', default='path/to/default/image.jpg')
+    body = RichTextField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified =  models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category",related_name="posts")

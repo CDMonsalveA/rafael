@@ -1,5 +1,5 @@
 from django import forms
-
+from .models import Post
 class CommentForm(forms.Form):
     author = forms.CharField(
         max_length=60,
@@ -12,3 +12,9 @@ class CommentForm(forms.Form):
             attrs={"class": "form-control", "placeholder": "Dejanos un comentario!"}
         )
     )
+
+    
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['title', 'body', 'categories']
